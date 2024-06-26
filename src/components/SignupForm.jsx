@@ -48,32 +48,65 @@ function SignupForm({setIsLoggedIn}) {
         <form onSubmit={submitHandler}>
             {/* First Name and Last Name */}
             <div>
-                <label>
-                    <p>First Name <sup>*</sup></p>
-                    <input type="text" required name="firstName" onChange={changeHandler} placeholder="Enter Firs tName" value={formData.firstName} />
+                <label className="w-full">
+                    <p className="text-0.[875rem] text-gray-50 mb-1 leading-[1.375rem]">
+                        First Name
+                        <sup>*</sup></p>
+                    <input 
+                    type="text" 
+                    required name="firstName" 
+                    onChange={changeHandler} 
+                    placeholder="Enter Firs tName" 
+                    value={formData.firstName}
+                    className="bg-gray-800 rounded-[0.5rem] text-gray-50 w-full p-[12px] border border-b-1 border-l-0 border-r-0 border-t-0 border-gray-400" />
                 </label>
-                <label>
-                    <p>Last Name <sup>*</sup></p>
-                    <input type="text" required name="lastName" onChange={changeHandler} placeholder="Enter Last Name" value={formData.lastName} />
+                <label className="w-full">
+                    <p className="text-0.[875rem] text-gray-50 mb-1 leading-[1.375rem]">Last Name <sup>*</sup></p>
+                    <input 
+                    type="text" required name="lastName" 
+                    onChange={changeHandler} 
+                    placeholder="Enter Last Name" 
+                    value={formData.lastName}
+                    className="bg-gray-800 rounded-[0.5rem] text-gray-50 w-full p-[12px] border border-b-1 border-l-0 border-r-0 border-t-0 border-gray-400" />
                 </label>
             </div>
             {/* Email */}
-            <label>
-                <p>Email <sup>*</sup></p>
-                <input type="email" required name="email" onChange={changeHandler} placeholder="Enter Email ID" value={formData.email} />
+            <label className="w-full">
+                <p className="text-0.[875rem] text-gray-50 mb-1 leading-[1.375rem]">Email <sup>*</sup></p>
+                <input 
+                type="email" 
+                required name="email" 
+                onChange={changeHandler} 
+                placeholder="Enter Email ID" 
+                value={formData.email}
+                className="bg-gray-800 rounded-[0.5rem] text-gray-50 w-full p-[12px] border border-b-1 border-l-0 border-r-0 border-t-0 border-gray-400" / >
             </label>
                 {/* Create Password and Confirm Password */}
                 <div>
-                    <label>
-                        <p>Create Password<sup>*</sup></p>
-                        <input type={showPassword1?("text"):("password")} required name="password" onChange={changeHandler} placeholder="Enter Password" value={formData.password} />
+                    <label className="w-full">
+                        <p className="text-0.[875rem] text-gray-50 mb-1 leading-[1.375rem]">Create Password<sup>*</sup></p>
+                        <input 
+                        type={showPassword1?("text"):("password")} 
+                        required name="password" 
+                        onChange={changeHandler} 
+                        placeholder="Enter Password" 
+                        value={formData.password}
+                        className="bg-gray-800 rounded-[0.5rem] text-gray-50 w-full p-[12px] border border-b-1 border-l-0 border-r-0 border-t-0 border-gray-400" />
                         <span onClick={() => setShowPassword1(prev => !prev)}>
                             {showPassword1 ? <AiOutlineEyeInvisible /> : <AiOutlineEye />}
                         </span>
                     </label>
-                    <label>
-                        <p>Confirm Password<sup>*</sup></p>
-                        <input type={showPassword2?("text"):("password")} required name="confirmPassword" onChange={changeHandler} placeholder="Confirm Password" value={formData.confirmPassword} />
+                    <label className="w-full">
+                        <p className="text-0.[875rem] text-gray-50 mb-1 leading-[1.375rem]">
+                            Confirm Password
+                            <sup>*</sup></p>
+                        <input 
+                        type={showPassword2?("text"):("password")} 
+                        required name="confirmPassword" 
+                        onChange={changeHandler} 
+                        placeholder="Confirm Password" 
+                        value={formData.confirmPassword} 
+                        className="bg-gray-800 rounded-[0.5rem] text-gray-50 w-full p-[12px] border border-b-1 border-l-0 border-r-0 border-t-0 border-gray-400" />
                         <span onClick={() => setShowPassword2(prev => !prev)}>
                             {showPassword2 ? <AiOutlineEyeInvisible /> : <AiOutlineEye />}
                         </span>

@@ -41,6 +41,7 @@
   color: #888;
 } */
 
+/* src/tailwind.css */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
