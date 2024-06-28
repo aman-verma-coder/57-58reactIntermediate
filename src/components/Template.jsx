@@ -8,7 +8,7 @@ function Template({title, desc1, desc2, image, formType, setIsLoggedIn}) {
     return(
         <div className='flex w-11/12 justify-between max-w-[1160px] py-12 mx-auto gap-x-12 gap-y-8'>
             <div className='w-11/12 max-w-[450px]'>
-                <h1 className='text-white font-semibold text-[1.875rem] leading-[2.375rem]'>
+                <h1 className='text-white font-semibold text-[1.875rem] leading-[2.25rem]'>
                     {title}
                 </h1>
                 <p className='text-[1.125rem] leading-[1.625rem] mt-4'>
@@ -26,7 +26,7 @@ function Template({title, desc1, desc2, image, formType, setIsLoggedIn}) {
                     </p>
                     <div className='h-[1px] w-full bg-gray-800'></div>
                 </div>
-                <button className='w-full flex justify-center items-center rounded-[8px] font-medium text-gray-100 border border-gray-800 px-[12px] py-[8px] gap-x-2 mt-6'>
+                <button className='w-full flex justify-center items-center rounded-[8px] font-medium text-gray-100 border border-gray-800 px-[12px] py-[8px] gap-x-2 mt-5'>
                     <FcGoogle></FcGoogle>
                     <p>Signin with Google</p>
                 </button>

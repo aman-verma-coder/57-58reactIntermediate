@@ -36,7 +36,7 @@ function LoginForm({ setIsLoggedIn }) {
             onChange={changeHandler}
             placeholder="Enter Email Address"
             name="email"
-            className="bg-gray-800 rounded-[0.5rem] text-gray-50 w-full p-[12px] border border-b-1 border-l-0 border-r-0 border-t-0 border-gray-400" />
+            className="h-[2.75rem] bg-gray-800 rounded-[0.5rem] text-gray-50 w-full p-[12px] border border-b-1 border-l-0 border-r-0 border-t-0 border-gray-400" />
         </label>
         <label className="w-full relative">
             <p className="text-0.[875rem] text-gray-50 mb-1 leading-[1.375rem]">
@@ -48,7 +48,7 @@ function LoginForm({ setIsLoggedIn }) {
             onChange={changeHandler} 
             placeholder="Enter Password" 
             name="password"
-            className="bg-gray-800 rounded-[0.5rem] text-gray-50 w-full p-[12px] border border-b-1 border-l-0 border-r-0 border-t-0 border-gray-400" />
+            className="h-[2.75rem] bg-gray-800 rounded-[0.5rem] text-gray-50 w-full p-[12px] border border-b-1 border-l-0 border-r-0 border-t-0 border-gray-400" />
             <span className="absolute right-3 top-[38px] cursor-pointer"
             onClick={() => setShowPassword(prev => !prev)}>
                 {showPassword ? <AiOutlineEyeInvisible fontSize={24} fill="#AFB2BF" /> : <AiOutlineEye fontSize={24} fill="#AFB2BF" />}
@@ -59,7 +59,7 @@ function LoginForm({ setIsLoggedIn }) {
             </span>
             </Link>
         </label><br />
-        <button type="submit" className="bg-yellow-400 rounded-[8px] font-medium text-gray-900 px-[12px] py-[8px] mt-[-20px]">
+        <button type="submit" className="bg-yellow-400 rounded-[8px] font-medium text-gray-900 px-[12px] py-[10px] mt-[-27.5px]">
             Log In
             </button>
     </form>
