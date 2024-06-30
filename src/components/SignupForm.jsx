@@ -30,79 +30,92 @@ function SignupForm({setIsLoggedIn}) {
             const accData={
                 ...formData,
             };
-            console.log(accData);
+            const finalData={
+                ...accData, accType
+            }
+            console.log(finalData);
             navigate('/dashboard');
         }
         else{
             toast.error("Passwords do not match");
         }
     }
-    return (<div>
-        <div className="flex bg-gray-800 p-1 gap-x-1 my-6 rounded-full max-w-max">
-            <button className={`${accType==='student'}`}
+    return (
+    <div>
+        <div className="flex bg-gray-800 p-1 gap-x-1 my-6 rounded-full max-w-max mt-[20px]">
+            <button className={`${accType==="student"
             ?
-            
+            "bg-gray-700 text-gray-50"
+            :
+            "bg-transparent text-gray-200"} py-2 px-5 rounded-full transition-all duration-200`
+        }
             onClick={()=>{setAccType("student")}}>
                 Student
             </button>
-            <button onClick={()=>{setAccType("instructor")}}>
+            <button className={`${accType==="instructor"
+            ?
+            "bg-gray-700 text-gray-50"
+            :
+            "bg-transparent text-gray-200"} py-2 px-5 rounded-full transition-all duration-200`
+        }
+            onClick={()=>{setAccType("instructor")}}>
                 Instructor
             </button>
         </div>
         <form onSubmit={submitHandler}>
             {/* First Name and Last Name */}
-            <div className="flex gap-x-4 justify-between mt-4">
+            <div className="flex gap-x-4 justify-between mt-[-10px]">
                 <label className="w-full">
-                    <p className="text-0.[875rem] text-gray-50 mb-1 leading-[1.375rem]">
+                    <p className="text-[0.875rem] text-gray-50 mb-1 leading-[1.375rem]">
                         First Name
                         <sup className="text-pink-200">*</sup></p>
                     <input 
                     type="text" 
                     required name="firstName" 
                     onChange={changeHandler} 
-                    placeholder="Enter Firs tName" 
+                    placeholder="Enter First Name" 
                     value={formData.firstName}
-                    className="h-[2.85rem] bg-gray-800 rounded-[0.5rem] text-gray-50 w-full p-[12px] border border-b-1 border-l-0 border-r-0 border-t-0 border-gray-400" />
+                    className="h-[2.5rem] bg-gray-800 rounded-[0.5rem] text-gray-50 w-full p-[12px] border border-b-1 border-l-0 border-r-0 border-t-0 border-gray-400" />
                 </label>
                 <label className="w-full">
-                    <p className="text-0.[875rem] text-gray-50 mb-1 leading-[1.375rem]">Last Name <sup className="text-pink-200">*</sup></p>
+                    <p className="text-[0.875rem] text-gray-50 mb-1 leading-[1.375rem]">Last Name <sup className="text-pink-200">*</sup></p>
                     <input 
                     type="text" required name="lastName" 
                     onChange={changeHandler} 
                     placeholder="Enter Last Name" 
                     value={formData.lastName}
-                    className="h-[2.85rem] bg-gray-800 rounded-[0.5rem] text-gray-50 w-full p-[12px] border border-b-1 border-l-0 border-r-0 border-t-0 border-gray-400" />
+                    className="h-[2.5rem] bg-gray-800 rounded-[0.5rem] text-gray-50 w-full p-[12px] border border-b-1 border-l-0 border-r-0 border-t-0 border-gray-400" />
                 </label>
             </div>
             {/* Email */}
             <label className="w-full">
-                <p className="text-0.[875rem] text-gray-50 mb-1 leading-[1.375rem] mt-4">Email <sup className="text-pink-200">*</sup></p>
+                <p className="text-[0.875rem] text-gray-50 mb-1 leading-[1.375rem] mt-3">Email <sup className="text-pink-200">*</sup></p>
                 <input 
                 type="email" 
                 required name="email" 
                 onChange={changeHandler} 
                 placeholder="Enter Email ID" 
                 value={formData.email}
-                className="h-[2.85rem] bg-gray-800 rounded-[0.5rem] text-gray-50 w-full p-[12px] border border-b-1 border-l-0 border-r-0 border-t-0 border-gray-400" />
+                className="h-[2.5rem] bg-gray-800 rounded-[0.5rem] text-gray-50 w-full p-[12px] border border-b-1 border-l-0 border-r-0 border-t-0 border-gray-400" />
             </label>
                 {/* Create Password and Confirm Password */}
                 <div className="flex gap-x-4 justify-between">
                     <label className="w-full relative">
-                        <p className="text-0.[875rem] text-gray-50 mb-1 leading-[1.375rem] mt-4">Create Password<sup className="text-pink-200">*</sup></p>
+                        <p className="text-[0.875rem] text-gray-50 mb-1 leading-[1.375rem] mt-3">Create Password<sup className="text-pink-200">*</sup></p>
                         <input 
                         type={showPassword1?("text"):("password")} 
                         required name="password" 
                         onChange={changeHandler} 
                         placeholder="Enter Password" 
                         value={formData.password}
-                        className="h-[2.85rem] bg-gray-800 rounded-[0.5rem] text-gray-50 w-full p-[12px] border border-b-1 border-l-0 border-r-0 border-t-0 border-gray-400" />
-                        <span className="absolute right-3 top-[52.5px] cursor-pointer"
+                        className="h-[2.5rem] bg-gray-800 rounded-[0.5rem] text-gray-50 w-full p-[12px] border border-b-1 border-l-0 border-r-0 border-t-0 border-gray-400" />
+                        <span className="absolute right-3 top-[47.5px] cursor-pointer"
                         onClick={() => setShowPassword1(prev => !prev)}>
                             {showPassword1 ? <AiOutlineEyeInvisible fontSize={24} fill="#AFB2BF"/> : <AiOutlineEye fontSize={24} fill="#AFB2BF"/>}
                         </span>
                     </label>
                     <label className="w-full relative">
-                        <p className="text-0.[875rem] text-gray-50 mb-1 leading-[1.375rem] mt-4">
+                        <p className="text-[0.875rem] text-gray-50 mb-1 leading-[1.375rem] mt-3">
                             Confirm Password
                             <sup className="text-pink-200">*</sup></p>
                         <input 
@@ -111,8 +124,8 @@ function SignupForm({setIsLoggedIn}) {
                         onChange={changeHandler} 
                         placeholder="Confirm Password" 
                         value={formData.confirmPassword} 
-                        className="h-[2.85rem] bg-gray-800 rounded-[0.5rem] text-gray-50 w-full p-[12px] border border-b-1 border-l-0 border-r-0 border-t-0 border-gray-400" />
-                        <span className="absolute right-3 top-[52.5px] cursor-pointer"
+                        className="h-[2.5rem] bg-gray-800 rounded-[0.5rem] text-gray-50 w-full p-[12px] border border-b-1 border-l-0 border-r-0 border-t-0 border-gray-400" />
+                        <span className="absolute right-3 top-[47.5px] cursor-pointer"
                         onClick={() => setShowPassword2(prev => !prev)}>
                             {showPassword2 ? <AiOutlineEyeInvisible fontSize={24} fill="#AFB2BF"/> : <AiOutlineEye fontSize={24} fill="#AFB2BF"/>}
                         </span>

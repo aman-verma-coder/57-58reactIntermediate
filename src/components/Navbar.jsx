@@ -18,10 +18,10 @@ function Navbar (props) {
             <Link to="/">Home</Link>
           </li>
           <li>
-            <Link to="/">About</Link>
+            <Link to="/about">About</Link>
           </li>
           <li>
-            <Link to="/">Contact</Link>
+            <Link to="/contact">Contact</Link>
           </li>
         </ul>
       </nav>
